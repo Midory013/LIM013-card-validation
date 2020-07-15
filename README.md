@@ -1,4 +1,8 @@
 # Tarjeta de crédito válida
+## Commit
+-  git add .
+-  git commit -m "Que paso"
+-  git push origin master
 
 ## Índice
 
