@@ -1,35 +1,12 @@
 import validator from './validator.js';
 
 document.getElementById('btnValidar').addEventListener("click",()=>{
-  let cardnumber = document.getElementById("cardnumber").value;
+  let cardnumber1 = document.getElementById("card-number-1").value;
+  let cardnumber2 = document.getElementById("card-number-2").value;
+  let cardnumber3 = document.getElementById("card-number-3").value;
+  let cardnumber4 = document.getElementById("card-number-4").value;
   // console.log(card)
-  validator.isValid(cardnumber);
-  validator.maskify(cardnumber);
-
-  function Validar(cardnumber) {
-    var cadena = cardnumber.toString();
-    var longitud = cadena.length;
-    var cifra = null;
-    var cifra_cad=null;
-    var suma=0;
-    for (var i=0; i < longitud; i+=2){
-      cifra = parseInt(cadena.charAt(i))*2;
-      if (cifra > 9){ 
-        cifra_cad = cifra.toString();
-        cifra = parseInt(cifra_cad.charAt(0)) + 
-   parseInt(cifra_cad.charAt(1));
-      }
-      suma+=cifra;
-    }
-    for (var i=1; i < longitud; i+=2){
-      suma += parseInt(cadena.charAt(i));
-    }
-     
-    if ((suma % 10) == 0){ 
-     alert("Número de tarjeta correcto");
-    } else {
-     alert("El número de tarjeta no es válido");
-    }
-   }
-  
+  validator.isValid(cardnumber1 + cardnumber2 + cardnumber3 + cardnumber4);
+  document.getElementById('prueba').innerHTML=(validator.maskify(cardnumber1 + cardnumber2 + cardnumber3 + cardnumber4)); 
 })
+  
